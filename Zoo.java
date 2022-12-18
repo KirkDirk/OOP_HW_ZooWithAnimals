@@ -9,6 +9,8 @@ public class Zoo {
         return this;
     }
 
+
+    
     @Override
     public String toString() {
         return "Zoo [animals=" + animals + "]";
@@ -53,6 +55,16 @@ public class Zoo {
         return result;
     }
 
+    public List<Swimmable> gSwimmable(){
+        List<Swimmable> result = new ArrayList<>();
+        for (Animal item : animals) {
+            if (item instanceof Swimmable) {
+                result.add((Swimmable) item);
+            }
+        }        
+        return result;
+    }
+
     public int getMaxSpeed(){
         int max = 0;
         for (Runable item : gRunable()) {
@@ -67,6 +79,18 @@ public class Zoo {
             if(item.FlySpeed() >maxFly) maxFly = item.FlySpeed();
         }
         return maxFly;
+    }
+
+    public int getMaxSwimmSpeed(){
+        int maxSwimm = 0;
+        for (Swimmable item : gSwimmable()) {
+            if(item.swimmSpeed() >maxSwimm) maxSwimm = item.swimmSpeed();
+        }
+        return maxSwimm;
+    }
+
+    public List<Animal> getAnimals() {
+        return animals;
     }
 
 }

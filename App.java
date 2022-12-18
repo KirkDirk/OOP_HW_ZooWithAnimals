@@ -22,7 +22,16 @@ public class App {
             System.out.println(item.FlySpeed());
         }
         System.out.println("Max flySpeed = " + zoo.getMaxFlySpeed());
+
+        for (Swimmable item : zoo.gSwimmable()) {
+            System.out.println(item.swimmSpeed());
+        }
+        System.out.println("Max swimmSpeed = " + zoo.getMaxSwimmSpeed());
+
+        SaveService saveZoo = new SaveService();
+        saveZoo.saveAnimals(zoo.getAnimals());
     }
+    
 
 
 }
