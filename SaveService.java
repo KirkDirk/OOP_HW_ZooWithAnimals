@@ -4,10 +4,11 @@ import java.util.List;
 
 public class SaveService {
     public void saveAnimals(List<Animal> animals) throws IOException {
-        FileWriter writer = new FileWriter("animalList.txt", false);
-        for (Animal item : animals) {
-            writer.write(item.toString() + "\n");
+        try (FileWriter writer = new FileWriter("animalList.txt", false)) {
+            for (Animal item : animals) {
+                writer.write(item.toString() + "\n");
+            }
+            writer.flush();
         }
-        writer.flush();
     }
 }

@@ -9,7 +9,8 @@ public class App {
             .addAnimal(new Dog("Bars", 4, "Abbos"))
             .addAnimal(new Monkey("Mars", 4, "Alex"))
             .addAnimal(new Duck("Donald", 2, "Igor"))
-            .addAnimal(new Eagle("White", 2, "USA"));
+            .addAnimal(new Eagle("White", 2, "USA"))
+            .addAnimal(new Penguin("Crush", 2, "Antarctica"));
         
         System.out.println(zoo.toString());
         System.out.println(zoo.talk());
