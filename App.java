@@ -7,13 +7,19 @@ public class App {
         Zoo zoo = new Zoo();
         zoo.addAnimal(new Monkey("Fobos", 4, "Vladimir"))
             .addAnimal(new Dog("Bars", 4, "Abbos"))
-            .addAnimal(new Monkey("Mars", 4, "Alex"));
+            .addAnimal(new Monkey("Mars", 4, "Alex"))
+            .addAnimal(new Duck("Donald", 2, "Igor"));
         System.out.println(zoo.toString());
         System.out.println(zoo.talk());
         for (Runable item : zoo.gRunable()) {
             System.out.println(item.runSpeed());
         }
-        System.out.println(zoo.getMaxSpeed());
+        System.out.println("Max runSpeed = " + zoo.getMaxSpeed());
+
+        for (Flyable item : zoo.gFlyable()) {
+            System.out.println(item.FlySpeed());
+        }
+        System.out.println("Max flySpeed = " + zoo.getMaxFlySpeed());
     }
 
 

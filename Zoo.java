@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Zoo {
@@ -44,6 +43,16 @@ public class Zoo {
         return result;
     }
 
+    public List<Flyable> gFlyable(){
+        List<Flyable> result = new ArrayList<>();
+        for (Animal item : animals) {
+            if (item instanceof Flyable) {
+                result.add((Flyable) item);
+            }
+        }        
+        return result;
+    }
+
     public int getMaxSpeed(){
         int max = 0;
         for (Runable item : gRunable()) {
@@ -51,4 +60,13 @@ public class Zoo {
         }
         return max;
     }
+
+    public int getMaxFlySpeed(){
+        int maxFly = 0;
+        for (Flyable item : gFlyable()) {
+            if(item.FlySpeed() >maxFly) maxFly = item.FlySpeed();
+        }
+        return maxFly;
+    }
+
 }
