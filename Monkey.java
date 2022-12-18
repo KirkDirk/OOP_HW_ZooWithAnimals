@@ -1,4 +1,4 @@
-public class Monkey extends Animal implements Speckable {
+public class Monkey extends Animal implements Speakable, Runable {
 
     public Monkey(String nickname, int legs, String owner) {
         super(nickname, legs, owner);
@@ -9,6 +9,12 @@ public class Monkey extends Animal implements Speckable {
     public String speak() {
         // TODO Auto-generated method stub
         return "iaiaiai";
+    }
+
+    @Override
+    public Integer runSpeed() {
+        // TODO Auto-generated method stub
+        return 10;
     }
     
 }

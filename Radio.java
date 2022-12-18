@@ -1,4 +1,4 @@
-public class Radio implements Speckable {
+public class Radio implements Speakable {
 
     @Override
     public String speak() {

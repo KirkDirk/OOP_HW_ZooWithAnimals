@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Zoo {
@@ -16,7 +17,7 @@ public class Zoo {
 
     public String talk() {
         StringBuilder speaks = new StringBuilder();
-        for (Animal item : animals) {
+        for (Speakable item : getSpeakable()) {
             speaks.append(item.speak() + "\n");            
         }
         return speaks.toString();
@@ -31,5 +32,23 @@ public class Zoo {
         }        
         result.add(new Radio());
         return result;
+    }
+
+    public List<Runable> gRunable(){
+        List<Runable> result = new ArrayList<>();
+        for (Animal item : animals) {
+            if (item instanceof Runable) {
+                result.add((Runable) item);
+            }
+        }        
+        return result;
+    }
+
+    public int getMaxSpeed(){
+        int max = 0;
+        for (Runable item : gRunable()) {
+            if(item.runSpeed()>max) max = item.runSpeed();
+        }
+        return max;
     }
 }

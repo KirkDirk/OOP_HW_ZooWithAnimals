@@ -1,4 +1,3 @@
 public interface Speakable {
-    public String speak;    
-    }
+    public String speak();        
 }
