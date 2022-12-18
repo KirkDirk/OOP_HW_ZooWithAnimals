@@ -8,7 +8,9 @@ public class App {
         zoo.addAnimal(new Monkey("Fobos", 4, "Vladimir"))
             .addAnimal(new Dog("Bars", 4, "Abbos"))
             .addAnimal(new Monkey("Mars", 4, "Alex"))
-            .addAnimal(new Duck("Donald", 2, "Igor"));
+            .addAnimal(new Duck("Donald", 2, "Igor"))
+            .addAnimal(new Eagle("White", 2, "USA"));
+        
         System.out.println(zoo.toString());
         System.out.println(zoo.talk());
         for (Runable item : zoo.gRunable()) {
